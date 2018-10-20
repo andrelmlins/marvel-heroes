@@ -7,9 +7,9 @@ import HeroesScreen from './screens/heroes/HeroesScreen';
 const Routes = () => (
     <BrowserRouter>
         <Switch>
-            <Route path="/" component={HeroesScreen} />
-            <Route path="/heroes" component={HeroesScreen} />
-            <Route path="/hero/:heroeId" component={HeroeScreen} />
+            <Route exact path="/" component={HeroesScreen} />
+            <Route exact path="/heroes" component={HeroesScreen} />
+            <Route path="/heroes/:heroId" component={HeroeScreen} />
         </Switch>
     </BrowserRouter>
 );

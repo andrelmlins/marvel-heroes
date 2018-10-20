@@ -20,7 +20,7 @@ class HeroesScreen extends Component {
     render() {
         return (
             <div className="HeroesScreen">
-                <Page>
+                <Page loading={this.props.loading}>
                     <HeroesList heroes={this.props.heroes} />
                 </Page>
             </div>

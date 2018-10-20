@@ -30,3 +30,19 @@
     transform: rotate(360deg);
   }
 }
+
+.view-loading{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0px;
+  left:0px;
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  background-color: rgb(230,0,25)!important;
+}

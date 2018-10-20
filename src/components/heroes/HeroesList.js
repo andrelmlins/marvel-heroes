@@ -29,7 +29,7 @@ class HeroesList extends Component {
                                         </div>
                                     }
                                     title={item.name}>
-                                    <p><Link to={"/hero/"+item.id}>Saiba mais...</Link></p>
+                                    <p><Link to={"/heroes/"+item.id}>Saiba mais...</Link></p>
                                 </Card>
                             </Col>
                         );
