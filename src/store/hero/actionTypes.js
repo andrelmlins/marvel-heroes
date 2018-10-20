@@ -6,9 +6,9 @@ export const getHeroBegin = () => ({
     type: GET_HERO_BEGIN
   });
   
-export const getHeroSuccess = heroes => ({
+export const getHeroSuccess = hero => ({
     type: GET_HERO_SUCCESS,
-    payload: { heroes }
+    payload: { hero }
 });
 
 export const getHeroError = error => ({

@@ -24,7 +24,7 @@ class HeroesList extends Component {
                                         <div className="card-image waves-effect waves-block waves-light">
                                             <img 
                                                 alt={item.name}
-                                                src={item.thumbnail.path+"/portrait_xlarge.jpg"}
+                                                src={item.thumbnail.path+"/portrait_xlarge."+item.thumbnail.extension}
                                                 onError={(e)=>{e.target.onerror = null; e.target.src="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available/portrait_xlarge.jpg"}}/>
                                         </div>
                                     }

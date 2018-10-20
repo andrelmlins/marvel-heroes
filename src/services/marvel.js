@@ -36,6 +36,74 @@ class MarvelService {
         }
     }
 
+    async getSeries(heroId) {
+        const url = MARVEL_ENDPOINT+'/characters/'+heroId+'/series?'+this.getParamsUrl();
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`MarvelService getHero failed, HTTP status ${response.status}`);
+        } else {
+            const result = await response.json();
+            return result.data.results;
+        }
+    }
+
+    async getComics(heroId) {
+        const url = MARVEL_ENDPOINT+'/characters/'+heroId+'/comics?'+this.getParamsUrl();
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`MarvelService getHero failed, HTTP status ${response.status}`);
+        } else {
+            const result = await response.json();
+            return result.data.results;
+        }
+    }
+
+    async getStories(heroId) {
+        const url = MARVEL_ENDPOINT+'/characters/'+heroId+'/stories?'+this.getParamsUrl();
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`MarvelService getHero failed, HTTP status ${response.status}`);
+        } else {
+            const result = await response.json();
+            return result.data.results;
+        }
+    }
+
+    async getEvents(heroId) {
+        const url = MARVEL_ENDPOINT+'/characters/'+heroId+'/events?'+this.getParamsUrl();
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`MarvelService getHero failed, HTTP status ${response.status}`);
+        } else {
+            const result = await response.json();
+            return result.data.results;
+        }
+    }
+
     getParamsUrl(){
         let params = "apikey="+KEY_PUBLIC+"&hash=fd3518773cd89f9b5110a1773377b8f5&ts=1&limit=100";
         return params;

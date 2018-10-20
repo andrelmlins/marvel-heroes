@@ -1,36 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .view-loading{
   position: fixed;
   width: 100%;
@@ -45,4 +12,27 @@
 
 nav {
   background-color: rgb(230,0,25)!important;
+  margin-bottom: 0px;
+}
+
+.background{
+  width: 100%;
+  height: 100%;
+  background: url("http://www.bruna.cat/imgdownload/full/72/722697/marvel-heroes-wallpaper.jpg") 100% 100%;
+  overflow-y: scroll;
+}
+
+html,body, #root, .div{
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  padding-top: 10px;
+}
+
+.logo{
+  width: 110px;
+  margin-top:10px;
+  margin-left: 10px;
 }

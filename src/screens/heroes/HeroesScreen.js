@@ -19,11 +19,11 @@ class HeroesScreen extends Component {
   
     render() {
         return (
-            <div className="HeroesScreen">
-                <Page loading={this.props.loading}>
+            <Page loading={this.props.loading}>
+                <div className="HeroesScreen">
                     <HeroesList heroes={this.props.heroes} />
-                </Page>
-            </div>
+                </div>
+            </Page>
         );
     }
     
