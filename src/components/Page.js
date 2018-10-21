@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Navbar, NavItem, Container } from 'react-materialize';
+import { Navbar, NavItem, Container, Icon } from 'react-materialize';
 import GridLoader from 'react-spinners/GridLoader';
 
 const propTypes = {
@@ -16,7 +16,8 @@ class Page extends Component {
         return (
             <div className="div">
                 <Navbar color='black' fixed right brand={<img alt="Marvel" className="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/MarvelLogo.svg/1200px-MarvelLogo.svg.png" />}>
-                    <NavItem href='/'>Heroes</NavItem>
+                    <NavItem href='/heroes/search'><Icon>search</Icon></NavItem>
+                    <NavItem href='/heroes'>Heroes</NavItem>
                 </Navbar>
                 {
                     this.props.loading && (

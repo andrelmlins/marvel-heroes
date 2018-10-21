@@ -19,6 +19,7 @@ export function getHero(heroId) {
                 biography:"",
                 description:"",
             };
+            
             dispatch(types.getHeroSuccess(hero));
         } catch (error) {
             dispatch(types.getHeroError(error))

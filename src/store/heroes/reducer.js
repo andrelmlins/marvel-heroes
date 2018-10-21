@@ -3,7 +3,9 @@ import * as types from './actionTypes';
 const initialState = {
   heroes: [],
   loading: false,
-  error: null
+  error: null,
+  page: 0,
+  search:false
 };
 
 export default function reduce(state = initialState, action = {}) {
@@ -16,10 +18,23 @@ export default function reduce(state = initialState, action = {}) {
         };
 
     case types.ALL_HEROES_SUCCESS:
+        let heroes = state.heroes;
+        heroes = heroes.concat(action.payload.heroes);
+        
         return {
             ...state,
             loading: false,
-            heroes: action.payload.heroes
+            heroes,
+            page: state.page+1
+        };
+
+    case types.ALL_SEARCH_HEROES_SUCCESS:
+        return {
+            ...state,
+            loading: false,
+            heroes: action.payload.heroes,
+            page: state.page+1,
+            search: true
         };
 
     case types.ALL_HEROES_ERROR:
@@ -44,4 +59,12 @@ export function getLoading(state) {
 
 export function getError(state) {
     return state.heroes.error;
+}
+
+export function getPage(state) {
+    return state.heroes.page;
+}
+
+export function getSearch(state) {
+    return state.heroes.search;
 }
