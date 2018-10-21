@@ -1,0 +1,40 @@
+
+{
+
+    "presets": [
+        [
+            "env",
+            {
+                "modules": false,
+                "useBuiltIns": "usage",
+                "debug": false
+            }
+        ],
+        "react",
+        "jest"
+    ],
+    "plugins": [
+        "transform-decorators-legacy",
+        "transform-class-properties"
+    ],
+    "env": {
+        "test": {
+            "presets": [
+                [
+                    "env",
+                    {
+                        "modules": "commonjs",
+                        "useBuiltIns": "usage",
+                        "debug": false
+                    }
+                ],
+                "react",
+                "jest"
+            ],
+            "plugins": [
+                "transform-decorators-legacy",
+                "transform-class-properties"
+            ]
+        }
+    }
+}

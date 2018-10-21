@@ -28,7 +28,7 @@ class HeroDetail extends Component {
         this.handleInputChange = this.handleInputChange.bind(this);
     }
 
-    handleInputChange = event => {
+    handleInputChange = ( event ) => {
         const value = event.target.value;
         const name = event.target.name;
 
