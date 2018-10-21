@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './HeroScreen.css';
+import './style.css';
 
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -21,11 +21,28 @@ class HeroScreen extends Component {
         return (
             <Page loading={this.props.loading}>
                 <div>
-                    <HeroDetail hero={this.props.hero}></HeroDetail>
-                    
+                    <HeroDetail 
+                        hero={this.props.hero}
+                        edit={this.props.edit}
+                        clickEdit={this.clickEdit}
+                        clickCancelEdit={this.clickCancelEdit}
+                        submitEdition={this.submitEdition}
+                    />
                 </div>
             </Page>
         );
+    }
+
+    clickEdit = () => {
+        this.props.dispatch(heroActions.editHero());
+    }
+
+    clickCancelEdit = () => {
+        this.props.dispatch(heroActions.editCancelHero());
+    }
+
+    submitEdition = (details) => {
+        this.props.dispatch(heroActions.sendEditHero(this.props.hero,details));
     }
 }
 
@@ -34,6 +51,7 @@ function mapStateToProps(state) {
         loading: heroSelectors.getLoading(state),
         error: heroSelectors.getError(state),
         hero: heroSelectors.getHero(state),
+        edit: heroSelectors.getEdit(state),
     };
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './HeroesScreen.css';
+import './style.css';
 
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'

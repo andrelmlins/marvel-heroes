@@ -44,7 +44,7 @@ class HeroDetailTab extends Component {
                                             <p>
                                                 <strong>{item.title}</strong>
                                                 {
-                                                    item.description!="" &&  (
+                                                    item.description!=="" &&  (
                                                     <span><br />{item.description}</span>
                                                     )
                                                 }
