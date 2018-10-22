@@ -9,8 +9,8 @@ import { withRouter } from 'react-router-dom'
 import * as heroesActions from '../../store/heroes/actions'
 import * as heroesSelectors from '../../store/heroes/reducer'
 
-import HeroesList from '../../components/heroes/HeroesList';
-import Page from '../../components/Page';
+import HeroesList from '../../components/heroes/HeroesList/HeroesList';
+import Page from '../../components/Page/Page';
 
 class HeroesSearchScreen extends Component {
 
@@ -36,7 +36,7 @@ class HeroesSearchScreen extends Component {
                     </Card>
                     <HeroesList heroes={this.props.heroes} onClick="" scroll={false} />
                     {
-                        this.props.heroes.length==0 && this.props.search && (
+                        this.props.heroes.length===0 && this.props.search && (
                             <Card className="center">
                                 <p>
                                     <strong>No Results</strong>

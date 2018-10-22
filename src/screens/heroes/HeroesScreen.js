@@ -8,8 +8,8 @@ import { withRouter } from 'react-router-dom'
 import * as heroesActions from '../../store/heroes/actions'
 import * as heroesSelectors from '../../store/heroes/reducer'
 
-import HeroesList from '../../components/heroes/HeroesList';
-import Page from '../../components/Page';
+import HeroesList from '../../components/heroes/HeroesList/HeroesList';
+import Page from '../../components/Page/Page';
 
 class HeroesScreen extends Component {
 

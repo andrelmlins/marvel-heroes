@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Tabs, Tab, Card, CardTitle, Button, Input, Row } from 'react-materialize';
-import HeroDetailTab from './HeroDetailTab';
+import HeroDetailTab from '../HeroDetailTab/HeroDetailTab';
 
 const propTypes = {
     hero: PropTypes.object,
