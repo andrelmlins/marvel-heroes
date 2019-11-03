@@ -1,17 +1,16 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+import React from "react";
+import { shallow } from "enzyme";
 
-import HeroDetailTab from './HeroDetailTab';
+import HeroDetailTab from "./HeroDetailTab";
 
-describe('HeroDetailTab Component', () => {
-    let component;
+describe("HeroDetailTab Component", () => {
+  let component;
 
-    beforeEach(() => {
-        component = shallow(<HeroDetailTab />);
-    });
+  beforeEach(() => {
+    component = shallow(<HeroDetailTab />);
+  });
 
-    it('Should render the component', () => {
-        expect(component).toHaveLength(1);
-    });
-
+  it("Should render the component", () => {
+    expect(component).toHaveLength(1);
+  });
 });

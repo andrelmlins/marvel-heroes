@@ -1,41 +1,41 @@
-.tabs .tab a{
-    color:rgb(230,0,25);
+.tabs .tab a {
+  color: rgb(230, 0, 25);
 }
 
 .tabs .tab a:hover {
-    color:rgb(230,0,25);
+  color: rgb(230, 0, 25);
 } /*Text color on hover*/
 
 .tabs .tab a.active {
-    color:rgb(230,0,25);
+  color: rgb(230, 0, 25);
 } /*Background and text color when a tab is active*/
 
 .tabs .indicator {
-    background-color:rgb(230,0,25);
+  background-color: rgb(230, 0, 25);
 }
 
 h4 {
-    color: rgb(230,0,25)
+  color: rgb(230, 0, 25);
 }
 
-.center-display{
-    display: flex;
-    align-items: center;
+.center-display {
+  display: flex;
+  align-items: center;
 }
 
-.left-display{
-    display: flex;
-    align-items: flex-start;
+.left-display {
+  display: flex;
+  align-items: flex-start;
 }
 
-.thumb-list{
-    margin-right: 20px;
+.thumb-list {
+  margin-right: 20px;
 }
 
-.m-r-10{
-    margin-right: 10px;
+.m-r-10 {
+  margin-right: 10px;
 }
 
-.center{
-    justify-content: center;
+.center {
+  justify-content: center;
 }

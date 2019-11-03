@@ -1,5 +1,5 @@
-.HeroesScreen .card-title{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.HeroesScreen .card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

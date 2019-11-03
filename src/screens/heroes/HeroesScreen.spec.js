@@ -1,17 +1,16 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+import React from "react";
+import { shallow } from "enzyme";
 
-import HeroesScreen from './HeroesScreen';
+import HeroesScreen from "./HeroesScreen";
 
-describe('HeroesScreen Component', () => {
-    let component;
+describe("HeroesScreen Component", () => {
+  let component;
 
-    beforeEach(() => {
-        component = shallow(<HeroesScreen />);
-    });
+  beforeEach(() => {
+    component = shallow(<HeroesScreen />);
+  });
 
-    it('Should render the component', () => {
-        expect(component).toHaveLength(1);
-    });
-
+  it("Should render the component", () => {
+    expect(component).toHaveLength(1);
+  });
 });

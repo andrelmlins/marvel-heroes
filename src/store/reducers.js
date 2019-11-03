@@ -1,7 +1,4 @@
-import heroes from './heroes/reducer';
-import hero from './hero/reducer';
+import heroes from "./heroes/reducer";
+import hero from "./hero/reducer";
 
-export {
-    heroes,
-    hero
-};
+export { heroes, hero };
