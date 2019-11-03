@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Card, Button, Input, Row, Col } from "react-materialize";
+import React, { useState } from "react";
+import { Card, Button, TextInput, Row, Col } from "react-materialize";
 
 import "./style.css";
 
@@ -12,62 +12,53 @@ import * as heroesSelectors from "../../store/heroes/reducer";
 import HeroesList from "../../components/heroes/HeroesList/HeroesList";
 import Page from "../../components/Page/Page";
 
-class HeroesSearchScreen extends Component {
-  constructor(props) {
-    super(props);
+const HeroesSearchScreen = props => {
+  const [search, setSearch] = useState("");
 
-    this.state = {
-      search: ""
-    };
-  }
-
-  render() {
-    return (
-      <Page loading={this.props.loading}>
-        <div className="HeroesSearchScreen">
-          <Card>
-            <Row>
-              <Input
-                name="search"
-                l={10}
-                s={12}
-                label="Search Hero..."
-                onChange={event =>
-                  this.setState({ search: event.target.value })
-                }
-              />
-              <Col l={2} s={12}>
-                <Button className="red" waves="light" onClick={this.search}>
-                  Search
-                </Button>
-              </Col>
-            </Row>
+  return (
+    <Page loading={props.loading}>
+      <div className="HeroesSearchScreen">
+        <Card>
+          <Row>
+            <TextInput
+              l={10}
+              s={12}
+              name="search"
+              label="Search Hero..."
+              value={search}
+              onChange={event => setSearch(event.target.value)}
+            />
+            <Col l={2} s={12}>
+              <Button
+                className="red"
+                waves="light"
+                onClick={() => {
+                  props.dispatch(heroesActions.searchHeroes(search));
+                }}
+              >
+                Search
+              </Button>
+            </Col>
+          </Row>
+        </Card>
+        <HeroesList heroes={props.heroes} onClick="" scroll={false} />
+        {props.heroes.length === 0 && props.search && (
+          <Card className="center">
+            <p>
+              <strong>No Results</strong>
+            </p>
           </Card>
-          <HeroesList heroes={this.props.heroes} onClick="" scroll={false} />
-          {this.props.heroes.length === 0 && this.props.search && (
-            <Card className="center">
-              <p>
-                <strong>No Results</strong>
-              </p>
-            </Card>
-          )}
-        </div>
-      </Page>
-    );
-  }
+        )}
+      </div>
+    </Page>
+  );
+};
 
-  search = () => {
-    this.props.dispatch(heroesActions.searchHeroes(this.state.search));
-  };
-}
-
-function mapStateToProps(state) {
-  return {
-    loading: heroesSelectors.getLoading(state),
-    error: heroesSelectors.getError(state),
-    heroes: heroesSelectors.getHeroes(state),
-    search: heroesSelectors.getSearch(state)
-  };
-}
+const mapStateToProps = state => ({
+  loading: heroesSelectors.getLoading(state),
+  error: heroesSelectors.getError(state),
+  heroes: heroesSelectors.getHeroes(state),
+  search: heroesSelectors.getSearch(state)
+});
 
 export default withRouter(connect(mapStateToProps)(HeroesSearchScreen));

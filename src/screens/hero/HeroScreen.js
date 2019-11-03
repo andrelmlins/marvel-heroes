@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 
 import "./style.css";
 
@@ -11,49 +11,33 @@ import * as heroSelectors from "../../store/hero/reducer";
 import Page from "../../components/Page/Page";
 import HeroDetail from "../../components/heroes/HeroDetail/HeroDetail";
 
-class HeroScreen extends Component {
-  async componentDidMount() {
-    await this.props.dispatch(
-      heroActions.getHero(this.props.match.params.heroId)
-    );
-  }
+const HeroScreen = ({ dispatch, match, ...props }) => {
+  useEffect(() => {
+    dispatch(heroActions.getHero(match.params.heroId));
+  }, [dispatch, match]);
 
-  render() {
-    return (
-      <Page loading={this.props.loading}>
-        <div>
-          <HeroDetail
-            hero={this.props.hero}
-            edit={this.props.edit}
-            clickEdit={this.clickEdit}
-            clickCancelEdit={this.clickCancelEdit}
-            submitEdition={this.submitEdition}
-          />
-        </div>
-      </Page>
-    );
-  }
+  return (
+    <Page loading={props.loading}>
+      <div>
+        <HeroDetail
+          hero={props.hero}
+          edit={props.edit}
+          clickEdit={() => dispatch(heroActions.editHero())}
+          clickCancelEdit={() => dispatch(heroActions.editCancelHero())}
+          submitEdition={details =>
+            dispatch(heroActions.sendEditHero(props.hero, details))
+          }
+        />
+      </div>
+    </Page>
+  );
+};
 
-  clickEdit = () => {
-    this.props.dispatch(heroActions.editHero());
-  };
-
-  clickCancelEdit = () => {
-    this.props.dispatch(heroActions.editCancelHero());
-  };
-
-  submitEdition = details => {
-    this.props.dispatch(heroActions.sendEditHero(this.props.hero, details));
-  };
-}
-
-function mapStateToProps(state) {
-  return {
-    loading: heroSelectors.getLoading(state),
-    error: heroSelectors.getError(state),
-    hero: heroSelectors.getHero(state),
-    edit: heroSelectors.getEdit(state)
-  };
-}
+const mapStateToProps = state => ({
+  loading: heroSelectors.getLoading(state),
+  error: heroSelectors.getError(state),
+  hero: heroSelectors.getHero(state),
+  edit: heroSelectors.getEdit(state)
+});
 
 export default withRouter(connect(mapStateToProps)(HeroScreen));

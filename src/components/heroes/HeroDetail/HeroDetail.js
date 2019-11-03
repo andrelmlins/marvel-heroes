@@ -6,7 +6,7 @@ import {
   Card,
   CardTitle,
   Button,
-  Input,
+  TextInput,
   Row
 } from "react-materialize";
 import HeroDetailTab from "../HeroDetailTab/HeroDetailTab";
@@ -142,21 +142,21 @@ class HeroDetail extends Component {
         <Card style={{ display: this.props.edit ? "block" : "none" }}>
           <h4>Edit Hero "{this.props.hero.name}"</h4>
           <Row>
-            <Input
+            <TextInput
               s={6}
               label="Super Power"
               name="superpower"
               defaultValue={this.state.superpower}
               onChange={this.handleInputChange}
             />
-            <Input
+            <TextInput
               s={6}
               label="Group"
               name="group"
               defaultValue={this.state.group}
               onChange={this.handleInputChange}
             />
-            <Input
+            <TextInput
               s={12}
               type="textarea"
               name="biography"
@@ -164,7 +164,7 @@ class HeroDetail extends Component {
               defaultValue={this.state.biography}
               onChange={this.handleInputChange}
             />
-            <Input
+            <TextInput
               s={12}
               type="textarea"
               name="description"
